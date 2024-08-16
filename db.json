@@ -1,0 +1,21 @@
+{
+  "Blog":[
+    {
+       "id": 1,
+      "title": "What is Empower Access App",
+      "content": "Employment for persons with disabilities is a great challenge country wide.  Persons with disabilities have a lack of job opportunities due to inaccessible jobs sites. Users lack control of having accessible job sites as well as feedback output from potential employers and jobs in general"
+    },
+
+    {
+       "id": 2,
+      "title": "What is Feed Art Project ",
+      "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime exercitationem sapiente consequuntur!"
+    },
+
+  {
+       "id": 3,
+      "title": "How can you Support ",
+      "content": "Suppor is very for the app can be done by commenting through the postLorem ipsum dolor sit amet consectetur adipisicing elit. Architecto eveniet a quibusdam. Vitae, explicabo magni?"
+    }
+  ]
+}
