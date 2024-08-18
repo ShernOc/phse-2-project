@@ -1,5 +1,6 @@
 const getBlogList = async () => {
-  const apiUrl = import.meta.env.VITE_BLOGS_API_URL;
+  const apiUrl =
+    import.meta.env.VITE_BLOGS_API_URL || process.env.VITE_BLOGS_API_URL;
   const endpoint = "blogs";
 
   if (!apiUrl) {
