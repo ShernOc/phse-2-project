@@ -1,10 +1,12 @@
 import { App } from "./App";
 import { Error, Home, Landing, Register, SignIn, Support } from "./pages";
+import { loader as homeLoader } from "./pages/home";
 
 const routes = [
   {
     path: "/",
     element: <App />,
+    errorElement: <Error />,
     children: [
       {
         path: "/",
@@ -13,6 +15,7 @@ const routes = [
       {
         path: "/home",
         element: <Home />,
+        loader: homeLoader,
       },
       {
         path: "/sign-in",
@@ -27,7 +30,6 @@ const routes = [
         element: <Support />,
       },
     ],
-    errorElement: <Error />,
   },
 ];
 

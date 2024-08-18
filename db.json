@@ -1,21 +1,64 @@
 {
-  "blog": [
+  "blogs": [
     {
       "id": 1,
-      "title": "What is Empower Access App",
-      "content": "Employment for persons with disabilities is a great challenge country wide.  Persons with disabilities have a lack of job opportunities due to inaccessible jobs sites. Users lack control of having accessible job sites as well as feedback output from potential employers and jobs in general"
+      "title": "Boost your conversion rate",
+      "description": "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.",
+      "date": "Jan 01, 2024",
+      "datetime": "2024-01-16",
+      "category": { "title": "Marketing" },
+      "author": {
+        "name": "Michael Foster",
+        "role": "Co-Founder / CTO"
+      }
     },
-
     {
       "id": 2,
-      "title": "What is Feed Art Project ",
-      "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime exercitationem sapiente consequuntur!"
+      "title": "Unleash your potential",
+      "description": "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.",
+      "date": "Feb 01, 2024",
+      "datetime": "2024-02-01",
+      "category": { "title": "Motivation" },
+      "author": {
+        "name": "Sherlyne Ochieng",
+        "role": "Founder"
+      }
     },
-
     {
       "id": 3,
-      "title": "How can you Support ",
-      "content": "Suppor is very for the app can be done by commenting through the postLorem ipsum dolor sit amet consectetur adipisicing elit. Architecto eveniet a quibusdam. Vitae, explicabo magni?"
+      "title": "Plan for future",
+      "description": "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.",
+      "date": "Mar 01, 2024",
+      "datetime": "2024-03-01",
+      "category": { "title": "Strategy" },
+      "author": {
+        "name": "Bill Gates",
+        "role": "CEO"
+      }
+    },
+    {
+      "id": 4,
+      "title": "Overcome the tides",
+      "description": "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.",
+      "date": "Apr 01, 2024",
+      "datetime": "2020-04-01",
+      "category": { "title": "Motivation" },
+      "author": {
+        "name": "Bernard Renault",
+        "role": "COO"
+      }
+    },
+    {
+      "id": 5,
+      "title": "Boost your conversion rate",
+      "description": "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.",
+      "date": "May 01, 2024",
+      "datetime": "2024-05-01",
+      "category": { "title": "Marketing" },
+      "author": {
+        "name": "Michael Foster",
+        "role": "Co-Founder / CTO"
+      }
     }
   ]
 }

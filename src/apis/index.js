@@ -1,0 +1,1 @@
+export { getBlogList } from "./getBlogList";
