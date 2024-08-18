@@ -24,4 +24,4 @@ Firebase
 *.njsproj
 *.sln
 *.sw?
-.env
+.env*
