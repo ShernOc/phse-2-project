@@ -1,6 +1,6 @@
-export { Home } from "./Home";
-export { Landing } from "./Landing";
-export { Login } from "./Login";
-export { Register } from "./Register";
-export { Error } from "./Error";
-export { Support } from "./Support";
+export { Home } from "./home";
+export { Landing } from "./landing";
+export { SignIn } from "./sign-in";
+export { Register } from "./register";
+export { Error } from "./error";
+export { Support } from "./support";

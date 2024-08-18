@@ -1,5 +1,5 @@
 import { App } from "./App";
-import { Error, Home, Landing, Login, Register, Support } from "./pages";
+import { Error, Home, Landing, Register, SignIn, Support } from "./pages";
 
 const routes = [
   {
@@ -15,8 +15,8 @@ const routes = [
         element: <Home />,
       },
       {
-        path: "/login",
-        element: <Login />,
+        path: "/sign-in",
+        element: <SignIn />,
       },
       {
         path: "/register",
