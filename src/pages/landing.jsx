@@ -30,7 +30,7 @@ function Landing() {
                 Feed Art Blog
               </h2>
               <p className="mt-6 text-lg leading-8 text-gray-300">
-                The one place for you to read your favorite blogs, comment and
+                The one place for you to read your favorite blogs, comment, and
                 even interact with the authors!
               </p>
               <div className="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
