@@ -1,5 +1,5 @@
 import { App } from "./App";
-import { Error, Home, Landing, Login, Register } from "./pages";
+import { Error, Home, Landing, Login, Register, Support } from "./pages";
 
 const routes = [
   {
@@ -21,6 +21,10 @@ const routes = [
       {
         path: "/register",
         element: <Register />,
+      },
+      {
+        path: "/support",
+        element: <Support />,
       },
     ],
     errorElement: <Error />,
