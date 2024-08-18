@@ -1,6 +1,15 @@
 import { App } from "./App";
-import { Error, Home, Landing, Register, SignIn, Support } from "./pages";
-import { loader as homeLoader } from "./pages/home";
+import {
+  Blogs,
+  Error,
+  Landing,
+  Register,
+  SignIn,
+  Support,
+  Blog,
+} from "./pages";
+import { loader as homeLoader } from "./pages/blogs";
+import { loader as blogLoader } from "./pages/blog";
 
 const routes = [
   {
@@ -13,8 +22,8 @@ const routes = [
         element: <Landing />,
       },
       {
-        path: "/home",
-        element: <Home />,
+        path: "/blogs",
+        element: <Blogs />,
         loader: homeLoader,
       },
       {
@@ -28,6 +37,11 @@ const routes = [
       {
         path: "/support",
         element: <Support />,
+      },
+      {
+        path: "/blogs/:blogId",
+        element: <Blog />,
+        loader: blogLoader,
       },
     ],
   },

@@ -11,7 +11,7 @@ export async function loader() {
   return { blogList };
 }
 
-function Home() {
+function Blogs() {
   const { blogList } = useLoaderData();
 
   const blogListWithRandomImage = blogList.map((blog) => ({
@@ -82,4 +82,4 @@ function Home() {
   );
 }
 
-export { Home };
+export { Blogs };
