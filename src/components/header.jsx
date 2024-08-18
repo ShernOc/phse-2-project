@@ -20,7 +20,7 @@ function Header() {
             FAB
           </Link>
         </div>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end flex gap-4">
+        <div className="flex flex-1 justify-end gap-4">
           <Link
             to="/blogs"
             className="text-sm font-semibold leading-6 text-gray-900 outline outline-1 rounded-md px-4 py-2 hover:bg-gray-900 hover:text-white transition duration-300"

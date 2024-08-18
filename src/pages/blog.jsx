@@ -20,7 +20,7 @@ function Blog() {
 
   return (
     <>
-      <main className="mt-[88px] p-8 max-w-3xl mx-auto">
+      <main className="pt-[88px] max-w-3xl mx-auto">
         <section className="text-center">
           {/* Heading */}
           <h1 className="text-5xl">{blogWithImage.title}</h1>
