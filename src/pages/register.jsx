@@ -3,6 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { updateProfile } from "firebase/auth";
 
 import { signUp } from "../auth";
+import { notifyError, notifySuccess } from "../utils";
+
 function Register() {
   const [formData, setFormData] = useState({
     name: "",
@@ -27,7 +29,7 @@ function Register() {
     const { name, email, password, confirmPassword } = formData;
     const matches = verfiyPasswordsMatch(password, confirmPassword);
     if (!matches) {
-      console.error("Passwords do not match!");
+      notifyError("Password do not match!");
       return;
     }
 
@@ -40,13 +42,19 @@ function Register() {
       await updateProfile(userCredentials.user, {
         displayName: name,
       });
+      notifySuccess("Account Created Successfuly.");
 
       // Redirect user to blogs after successful signup
       navigate("/blogs");
       setIsLoading(false);
+      notifySuccess("Account Created Successfully!");
     } catch (error) {
       setIsLoading(false);
-      console.log(error);
+      if (error.message === "Firebase: Error (auth/email-already-in-use).") {
+        notifyError("Email already in use!");
+      } else {
+        notifyError("An error occurred during sign up.");
+      }
     }
   };
 

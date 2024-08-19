@@ -45,7 +45,11 @@ const routes = [
       },
       {
         path: "/blogs/:blogId",
-        element: <Blog />,
+        element: (
+          <PrivateRoute>
+            <Blog />
+          </PrivateRoute>
+        ),
         loader: blogLoader,
       },
     ],

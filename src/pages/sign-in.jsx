@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 import { signIn } from "../auth";
+import { notifyError, notifySuccess } from "../utils";
 
 function SignIn() {
   const [formData, setFormData] = useState({});
@@ -16,8 +17,11 @@ function SignIn() {
       await signIn(formData.email, formData.password);
       navigate("/blogs");
       setLoading(false);
+      notifySuccess("Sign In Successful.");
     } catch (error) {
-      console.error(error);
+      if (error.message === "Firebase: Error (auth/invalid-credential).") {
+        notifyError("Invalid credentials!");
+      }
       setLoading(false);
     }
   };
