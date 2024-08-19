@@ -1,5 +1,6 @@
-import { Outlet, useLoaderData } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 
+import { analytics } from "./firebase";
 import { Header } from "./components";
 
 function App() {
