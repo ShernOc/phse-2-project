@@ -23,7 +23,7 @@ function Register() {
   const handleFormSubmit = async (e) => {
     e.preventDefault();
 
-    const { name, password, confirmPassword } = formData;
+    const { name, email, password, confirmPassword } = formData;
     const matches = verfiyPasswordsMatch(password, confirmPassword);
     if (!matches) {
       console.error("Passwords do not match!");
