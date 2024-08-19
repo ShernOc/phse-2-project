@@ -1,6 +1,54 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { updateProfile } from "firebase/auth";
 
+import { signUp } from "../auth";
 function Register() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
+  const navigate = useNavigate();
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+
+    const { name, password, confirmPassword } = formData;
+    const matches = verfiyPasswordsMatch(password, confirmPassword);
+    if (!matches) {
+      console.error("Passwords do not match!");
+      return;
+    }
+
+    try {
+      // Sign up the user
+      const userCredential = await signUp(email, password);
+
+      // Update user profile with additional information
+      await updateProfile(userCredential.user, {
+        name,
+      });
+
+      // Redirect user to blogs after successful signup
+      navigate("/blogs");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const verfiyPasswordsMatch = (password, confirmPassword) =>
+    password === confirmPassword;
+
   return (
     <>
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
@@ -11,7 +59,7 @@ function Register() {
         </div>
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-          <form action="#" method="POST" className="space-y-6">
+          <form action="#" className="space-y-6" onSubmit={handleFormSubmit}>
             <div>
               <label
                 htmlFor="username"
@@ -27,6 +75,7 @@ function Register() {
                   required
                   autoComplete="name"
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  onChange={handleInputChange}
                 />
               </div>
             </div>
@@ -45,6 +94,7 @@ function Register() {
                   required
                   autoComplete="email"
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  onChange={handleInputChange}
                 />
               </div>
             </div>
@@ -65,6 +115,7 @@ function Register() {
                   type="password"
                   required
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  onChange={handleInputChange}
                 />
               </div>
             </div>
@@ -81,10 +132,11 @@ function Register() {
               <div className="mt-2">
                 <input
                   id="confirmPassword"
-                  name="confirmPssword"
+                  name="confirmPassword"
                   type="password"
                   required
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  onChange={handleInputChange}
                 />
               </div>
             </div>

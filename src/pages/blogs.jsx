@@ -1,10 +1,7 @@
 import { Link, useLoaderData } from "react-router-dom";
 
 import { getBlogList } from "../apis";
-
-const user = {
-  name: "Sherlyne",
-};
+import { useAuth } from "../contexts/AuthContext";
 
 export async function loader() {
   const blogList = await getBlogList();
@@ -13,6 +10,7 @@ export async function loader() {
 
 function Blogs() {
   const { blogList } = useLoaderData();
+  const { currentUser } = useAuth();
 
   const blogListWithRandomImage = blogList.map((blog) => ({
     ...blog,
@@ -28,7 +26,7 @@ function Blogs() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:mx-0">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              Welcome {user.name},
+              Welcome {currentUser.name},
             </h2>
             <p className="mt-2 text-lg leading-8 text-gray-600">
               Learn how to grow as an individual with our expert advice.
