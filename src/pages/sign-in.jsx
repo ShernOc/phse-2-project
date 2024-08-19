@@ -36,7 +36,7 @@ function SignIn() {
         </div>
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-          <form action="#" className="space-y-6" onSubmit={handleFormSbumit}>
+          <form className="space-y-6" onSubmit={handleFormSbumit}>
             <div>
               <label
                 htmlFor="email"

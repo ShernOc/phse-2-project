@@ -26,7 +26,7 @@ const routes = [
         path: "/blogs",
         element: (
           <PrivateRoute>
-            <Blog />
+            <Blogs />
           </PrivateRoute>
         ),
         loader: homeLoader,

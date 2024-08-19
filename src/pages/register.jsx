@@ -32,11 +32,11 @@ function Register() {
 
     try {
       // Sign up the user
-      const userCredential = await signUp(email, password);
+      const userCredentials = await signUp(email, password);
 
       // Update user profile with additional information
-      await updateProfile(userCredential.user, {
-        name,
+      await updateProfile(userCredentials.user, {
+        displayName: name,
       });
 
       // Redirect user to blogs after successful signup
@@ -59,7 +59,7 @@ function Register() {
         </div>
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-          <form action="#" className="space-y-6" onSubmit={handleFormSubmit}>
+          <form className="space-y-6" onSubmit={handleFormSubmit}>
             <div>
               <label
                 htmlFor="username"
@@ -116,6 +116,7 @@ function Register() {
                   required
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   onChange={handleInputChange}
+                  minLength={8}
                 />
               </div>
             </div>
@@ -137,6 +138,7 @@ function Register() {
                   required
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   onChange={handleInputChange}
+                  minLength={8}
                 />
               </div>
             </div>
