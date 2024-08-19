@@ -42,8 +42,8 @@ function Register() {
       });
 
       // Redirect user to blogs after successful signup
-      setIsLoading(false);
       navigate("/blogs");
+      setIsLoading(false);
     } catch (error) {
       setIsLoading(false);
       console.log(error);

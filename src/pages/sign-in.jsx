@@ -14,8 +14,8 @@ function SignIn() {
     try {
       setLoading(true);
       await signIn(formData.email, formData.password);
-      setLoading(false);
       navigate("/blogs");
+      setLoading(false);
     } catch (error) {
       console.error(error);
       setLoading(false);
