@@ -10,7 +10,7 @@ import {
 } from "./pages";
 import { loader as homeLoader } from "./pages/blogs";
 import { loader as blogLoader } from "./pages/blog";
-import { PrivateRoute } from "./components/PrivateRoute";
+import { ProtectedRoute } from "./components";
 
 const routes = [
   {
@@ -25,9 +25,9 @@ const routes = [
       {
         path: "/blogs",
         element: (
-          <PrivateRoute>
+          <ProtectedRoute>
             <Blogs />
-          </PrivateRoute>
+          </ProtectedRoute>
         ),
         loader: homeLoader,
       },
@@ -46,9 +46,9 @@ const routes = [
       {
         path: "/blogs/:blogId",
         element: (
-          <PrivateRoute>
+          <ProtectedRoute>
             <Blog />
-          </PrivateRoute>
+          </ProtectedRoute>
         ),
         loader: blogLoader,
       },
