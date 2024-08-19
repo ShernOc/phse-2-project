@@ -1,9 +1,12 @@
 import { Link } from "react-router-dom";
 
 import { useCurrentPath } from "../hooks";
+import { logOut } from "../auth";
+import { useAuth } from "../contexts/AuthContext";
 
 function Header() {
   const currentPath = useCurrentPath();
+  const { currentUser } = useAuth();
 
   return (
     <header className="absolute top-0 left-0 right-0">
@@ -13,7 +16,7 @@ function Header() {
       >
         <div className="flex lg:flex-1">
           <Link
-            to="/"
+            to={currentUser ? "/blogs" : "/"}
             className="-m-1.5 p-1.5 text-4xl font-extrabold text-indigo-600 tracking-wide uppercase shadow-lg"
           >
             <span className="sr-only">Feed Art Blog</span>
@@ -39,6 +42,14 @@ function Header() {
                 Sign in <span aria-hidden="true">&rarr;</span>
               </Link>
             )}
+          {currentUser && (
+            <button
+              onClick={logOut}
+              className="text-sm font-semibold leading-6 text-gray-900 outline outline-1 rounded-md px-4 py-2 hover:bg-gray-900 hover:text-white transition duration-300"
+            >
+              Log out
+            </button>
+          )}
         </div>
       </nav>
     </header>
